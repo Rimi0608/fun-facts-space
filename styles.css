@@ -1,38 +1,154 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f8ff;
+    font-family: 'Montesserat';
+    background-color: #1a1a2e;
+    color: #132e35;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
+    background-image: url('./happychild.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-blend-mode: hard-light;
 }
 
 .container {
     text-align: center;
-    background-color: #fff;
+    /* background-color: #16213e; */
+    background-color: #ddd8d0;
     padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-button {
-    padding: 10px 20px;
-    font-size: 16px;
-    margin-top: 20px;
+    border-radius: 50px;
+    /* box-shadow: 0 0 40px rgba(228, 221, 221, 0.5); */
     cursor: pointer;
+    
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: #173211;
+    position: relative;
+    top: 10%;
+}
+
+.fact-box {
+  /* background-color: #0f3460; */
+  background-color: #efcead;
+  padding: 20px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  font-size: 1.5em;
+}
+
+.fact-box::after {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  /* background-color: #333; */
+  background-color: #efcead;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+/* glow */
+.fact-box::before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #FF0000, #FF7300, #FFFB00, #48FF00,
+    #00FFD5, #002BFF, #FF00C8, #FF0000
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 600%;
+  z-index: -1;
+  width: calc(100% + 6px);
+  height: calc(100% + 6px);
+  filter: blur(8px);
+  animation: glowing 20s linear infinite;
+  border-radius: 10px;
+  opacity: 1; /* Set opacity to 1 to make it always visible */
+}
+
+@keyframes glowing {
+  0% {background-position: 0 0;}
+  50% {background-position: 400% 0;}
+  100% {background-position: 0 0;}
+}
+
+.fact-box:hover {
+  transform: scale(1.15);
+}
+
+.btn {
+    margin: 100px;
+    padding: 15px 40px;
     border: none;
-    border-radius: 5px;
-    background-color: #007bff;
-    color: white;
-}
-
-button:hover {
-    background-color: #0056b3;
-}
-
-#factDisplay {
-    margin-top: 20px;
-    font-size: 18px;
-    color: #333;
-}
+    outline: none;
+    color: #173211;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 12px;
+    font-size: 1.15em;
+  }
+  .btn::after {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #efcead;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+  }
+  /* glow */
+  .btn::before {
+    content: "";
+    background: linear-gradient(
+      45deg,
+      #FF0000, #FF7300, #FFFB00, #48FF00,
+      #00FFD5, #002BFF, #FF00C8, #FF0000
+    );
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 600%;
+    z-index: -1;
+    width: calc(100% + 4px);
+    height:  calc(100% + 4px);
+    filter: blur(8px);
+    animation: glowing 20s linear infinite;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+    opacity: 1;
+  }
+  
+  @keyframes glowing {
+    0% {background-position: 0 0;}
+    50% {background-position: 400% 0;}
+    100% {background-position: 0 0;}
+  }
+  
+  /* hover */
+  .btn:hover {
+    transform: scale(1.05);
+  }
+  
+  .btn:active:after {
+    background: transparent;
+  }
+  
+  .btn:active {
+    color: #000;
+    font-weight: bold;
+  }
